@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: ai-image-detector-fullstack
+    env: python
+    buildCommand: pip install -r requirements-api.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT app_fullstack:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
